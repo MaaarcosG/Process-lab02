@@ -58,6 +58,5 @@ dkms.conf
 
 # Lab files
 *.txt
-*.pdf
 
 # End of https://www.gitignore.io/api/c
