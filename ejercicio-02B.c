@@ -9,21 +9,33 @@ int main(){
 
 	start = clock();
 	pid1 = fork();
-	pid2 = fork();
-	pid3 = fork();
-
+	/*proceso hijo*/
 	if(pid1 == 0){
-		/*hijo (primera generacion) = padre*/
+		pid2 = fork();
+		/*proceso nieto*/
 		if(pid2 == 0){
-			/*Nieto*/
-		}else{
-			/*bisnieto*/
-			for(int i = 0; i<10000000; i++){
-				wait(NULL);
+			pid3 = fork();
+			/*proceso bisnieto*/
+			if(pid3 == 0){
+				/*ciclo de un millon de interacciones*/
+				for(int i=0; i<1000000; i++){}
+			}else{
+				/*ciclo de un millon de interacciones*/
+				for(int i=0; i<1000000; i++){}
+				wait(NULL) 
+			}else{
+				/*ciclo de un millon de interacciones*/
+				for(int i=0; i<1000000; i++){}
+				wait(NULL) 
 			}
 		}
+    } else{
+    	wait(NULL);
+    	end = clock();
+    	/*tiempo de ejecucion*/
+    	double rest = (double)(end - start);
+    	printf("%f\n", rest);
+    	return 0;
     }
-    end = clock();
-    double rest = end - start;
-	printf("%f\n", rest);
+    
 }

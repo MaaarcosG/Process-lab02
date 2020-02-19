@@ -6,21 +6,21 @@ int main(){
 	clock_t start, end;
 	start = clock();
 	//for 1
-	for(int i = 0; i<10000000; i++){
+	for(int i = 0; i<1000000; i++){
 		printf("%d\n", i);
 	}
 	//for 2
-	for(int i = 0; i<10000000; i++){
+	for(int i = 0; i<1000000; i++){
 		printf("%d\n", i);
 	}
 	//for 3
-	for(int i = 0; i<10000000; i++){
+	for(int i = 0; i<1000000; i++){
 		printf("%d\n", i);
 	}
 	end = clock();
 	
 	double rest;
-	rest = end - start;
+	rest = (double)(end - start);
 	printf("%f\n", rest);
 	return 0;
 }
